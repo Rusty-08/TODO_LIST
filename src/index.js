@@ -22,8 +22,6 @@
 window.addEventListener('DOMContentLoaded', () => {
 
 
-
-
     // Display year in footer
 
     document.getElementById('year')

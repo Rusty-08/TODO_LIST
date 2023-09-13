@@ -178,6 +178,46 @@
     background-color: var(--sidebar-background) !important;
 }
 
+/* MODAL */
+
+.modal-body #title, 
+.modal-body #textarea, 
+.modal-body #due_date {
+    border-color: transparent;
+    background-color: rgba(23, 107, 135, 0.1);
+}
+
+.modal-body #title:focus, 
+.modal-body #textarea:focus, 
+.modal-body #due_date:focus {
+    border: 1px solid var(--btn-background-color) !important;
+    background-color: transparent;
+    box-shadow: none !important;
+}
+
+.modal-body #title,
+.modal-body #due_date {
+    height: 2.5rem;
+}
+
+.form-check-input:checked {
+    border-color: var(--light-blue-green-color);
+    background-color: var(--btn-background-color);
+}
+
+.due_date {
+    width: 40%;
+}
+
+.priority {
+    width: 60%;
+}
+
+.priority-radio {
+    height: 2.5rem;
+    background-color: rgba(23, 107, 135, 0.1);
+}
+
 /* FOOTER */
 
 .footer p, .footer i, .footer a {
