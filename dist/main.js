@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("// * Lists of nav links : Home, Today, This week and This month\r\n// * view all projects in home page\r\n// * View all todos in project when clicked\r\n// * Display title, due date and color priority type in each todo\r\n// * Add edit todo functionality\r\n// * Add delete todo functionality\r\n// * Filter todos to display in today, this week and this month\r\n// * Add sorting by date and priority in home, today, this month and this month page\n\n//# sourceURL=webpack://todo_list/./src/index.js?");
+eval("//TODO Lists of nav links : Home, Today, This week and This month\r\n//TODO view all projects in home page\r\n//TODO View all todos in project when clicked\r\n//TODO Display title, due date and color priority type in each todo\r\n//TODO Add edit todo functionality\r\n//TODO Add delete todo functionality\r\n//TODO Filter todos to display in today, this week and this month\r\n//TODO Add sorting by date and priority in home, today, this month and this month page\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n// * ONLOAD\r\n\r\nwindow.addEventListener('DOMContentLoaded', () => {\r\n\r\n\r\n\r\n\r\n    // Display year in footer\r\n\r\n    document.getElementById('year')\r\n        .textContent = new Date().getFullYear()\r\n})\n\n//# sourceURL=webpack://todo_list/./src/index.js?");
 
 /***/ })
 

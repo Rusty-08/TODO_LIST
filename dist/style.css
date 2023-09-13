@@ -10,14 +10,14 @@
 }
 
 :root {
-    --background-color: #e0e5eb;
+    --background-color: #d9e2ec;
     --font-light-color: #f4f1ed;
     --font-dark-color: #02222e;
     --light-color: #EEEEEE;
     --btn-background-color: #176B87;
     --icon-color: #90CAF9;
     --light-blue-green-color: #64CCC5;
-    --border-color: rgba(5, 59, 80, 0.1);
+    --border-color: rgba(5, 59, 80, 0.2);
     --sidebar-background: #053B50;
     --sidebar-width: 18rem;
     --transition-175ms: all 0.175s ease-in-out;
@@ -41,21 +41,27 @@
     margin-left: var(--sidebar-width);
 }
 
-.navbar,
-.footer,
-.container 
-{
+.navbar, .footer, .container {
     width: 100%;
     left: var(--sidebar-width);
+    background-color: white;
 }
 
+.navbar {
+    width: calc(100% - var(--sidebar-width)) !important;
+}
 
-.navbar,
-.footer
-{
+.navbar {
     height: 5rem;
-    background-color: var(--light-color);
 }
+
+.container {
+    min-height: calc(100vh - 6.5rem);
+    margin: 6.5rem 0rem 1.5rem 0rem;
+    padding: 2rem;
+}
+
+/* SIDEBAR */
 
 .side-bar .logo {
     width: 15rem;
@@ -87,6 +93,7 @@
     padding-left: 2rem;
     color: var(--font-light-color);
     opacity: 0.5;
+    transition: var(--transition-175ms);
 }
 
 .nav-link:hover {
@@ -108,8 +115,121 @@
     margin-right: 1rem;
 }
 
-.container {
-    min-height: calc(100vh - 7rem);
-    margin: 7rem 0rem 2rem 0rem;
-    background-color: var(--light-color);
+/* NAVBAR */
+
+.title .check {
+    color: var(--sidebar-background);
+    font-size: 1.6rem;
+}
+
+.title p, .title i, .calendar i {
+    font-size: 1.3rem;
+    color: var(--sidebar-background);
+}
+
+.title span {
+    color: var(--btn-background-color);
+    padding-left: 0.4rem;
+    border-left: 1.5px dotted var(--btn-background-color);
+}
+
+.calendar {
+    height: 3rem;
+    width: 3rem;
+    background-color: var(--border-color);
+    border-radius: 50%;
+}
+
+.calendar i {
+    font-size: 1.5rem;
+    color: var(--btn-background-color);
+}
+
+/* HOME PAGE */
+
+.content-header {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.content-header h5 {
+    color: var(--font-dark-color);
+}
+
+.content-header button {
+    background-color: var(--btn-background-color);
+    color: var(--font-light-color);
+    padding: 0.4rem 1.5rem;
+    font-size: 1.1rem;
+    transition: var(--transition-175ms);
+}
+
+.content-header button:hover,
+.content-header button:active {
+    background-color: var(--sidebar-background) !important;
+    color: var(--font-light-color) !important;
+}
+
+.dropdown-menu.show {
+    background-color: var(--btn-background-color);
+}
+
+.dropdown .btn.show {
+    background-color: var(--sidebar-background) !important;
+}
+
+/* FOOTER */
+
+.footer p, .footer i, .footer a {
+    color: var(--font-dark-color);
+    transition: var(--transition-175ms);
+}
+
+.footer .repo {
+    color: var(--font-dark-color);
+    background-color: var(--border-color);
+}
+
+.footer .repo:hover {
+    color: var(--font-light-color);
+    background-color: var(--font-dark-color);
+}
+
+.footer .repo:hover i {
+    color: var(--icon-color);
+}
+
+.accounts a {
+    padding: 0.5rem 0.55rem;
+    line-height: 0;
+    border-radius: 50%;
+    transition: var(--transition-175ms);
+}
+
+.accounts a:first-child {
+    padding: 0.5rem 0.7rem;
+}
+
+.accounts a:nth-child(2) {
+    padding: 0.5rem 0.6rem;
+}
+
+.accounts a:hover {
+    background-color: var(--border-color);
+}
+
+.accounts a:hover i {
+    transform: scale(1.1);
+    color: var(--btn-background-color);
+}
+
+.year {
+    padding-left: 1rem;
+    border-left: 1px solid var(--border-color);
+}
+
+.year i {
+    margin-top: 0.15rem;
+    font-size: 0.9rem;
+    color: var(--btn-background-color);
 }

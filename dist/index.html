@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- BOOTSTRAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.min.js" integrity="sha512-fHY2UiQlipUq0dEabSM4s+phmn+bcxSYzXP4vAXItBvBHU7zAM/mkhCZjtBEIJexhOMzZbgFlPLuErlJF2b+0g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.bundle.min.js" integrity="sha512-ToL6UYWePxjhDQKNioSi4AyJ5KkRxY+F1+Fi7Jgh0Hp5Kk2/s8FD7zusJDdonfe5B00Qw+B8taXxF6CFLnqNCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css" integrity="sha512-Z/def5z5u2aR89OuzYcxmDJ0Bnd5V1cKqBEbvLOiUNWdg9PQeXVvXLI90SE4QOHGlfLqUnDNVAYyZi8UwUTmWQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- FONTAWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -23,39 +23,98 @@
             </div>
             <div class="nav flex-column nav-pills my-4 gap-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fa-solid fa-table-columns"></i>Home</button>
-                <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="fa-solid fa-calendar-day"></i>Today</button>
-                <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fa-solid fa-calendar-week"></i>This week</button>
-                <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fa-regular fa-calendar-days"></i>This month</button>
+                <button class="nav-link" id="v-pills-today-tab" data-bs-toggle="pill" data-bs-target="#v-pills-today" type="button" role="tab" aria-controls="v-pills-today" aria-selected="false"><i class="fa-solid fa-calendar-day"></i>Today</button>
+                <button class="nav-link" id="v-pills-week-tab" data-bs-toggle="pill" data-bs-target="#v-pills-week" type="button" role="tab" aria-controls="v-pills-week" aria-selected="false"><i class="fa-solid fa-calendar-week"></i>This week</button>
+                <button class="nav-link" id="v-pills-month-tab" data-bs-toggle="pill" data-bs-target="#v-pills-month" type="button" role="tab" aria-controls="v-pills-month" aria-selected="false"><i class="fa-regular fa-calendar-days"></i>This month</button>
             </div>
         </aside>
         <!-- MAIN CONTAINER -->
         <section id="main-container">
             <!-- NAVBAR -->
-            <nav class="navbar fixed-top">
-                <div class="container-fluid">
-                  
+            <nav class="navbar fixed-top shadow-sm d-flex align-items-center justify-content-between px-4">
+                <div class="title d-flex align-items-center gap-2">
+                    <i class="fa-solid fa-check-to-slot check"></i>
+                    <p class="m-0 fw-medium">TODO <span class="fw-normal">LIST</span></p>
+                </div>
+                <div class="calendar d-flex align-items-center justify-content-center">
+                    <i class="fa-regular fa-calendar-check"></i>
                 </div>
             </nav>
             <!-- CONTENT BODY -->
-            <section class="container">
+            <section class="container shadow-sm">
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
-
+                        <div class="content-header d-flex justify-content-between align-items-end">
+                            <h5 class="fw-normal m-0">Projects</h5>
+                            <button type="button" class="btn">
+                                <i class="fa-solid fa-plus"></i>
+                                Projects
+                            </button>
+                        </div>
                     </div>
-                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">
-
+                    <div class="tab-pane fade" id="v-pills-today" role="tabpanel" aria-labelledby="v-pills-today-tab" tabindex="0">
+                        <div class="content-header d-flex justify-content-between align-items-end">
+                            <h5 class="fw-normal m-0">Today — <span id="day">day_date_expression</span></h5>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dropdown
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><button class="dropdown-item" type="button">All</button></li>
+                                    <li><button class="dropdown-item" type="button">Very important</button></li>
+                                    <li><button class="dropdown-item" type="button">Important</button></li>
+                                    <li><button class="dropdown-item" type="button">Not very important</button></li>
+                                </ul>
+                            </div>                              
+                        </div>
                     </div>
-                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabindex="0">
-
+                    <div class="tab-pane fade" id="v-pills-week" role="tabpanel" aria-labelledby="v-pills-week-tab" tabindex="0">
+                        <div class="content-header d-flex justify-content-between align-items-end">
+                            <h5 class="fw-normal m-0">Week — <span id="week">week_date_expression</span></h5>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dropdown
+                                </button>
+                                <ul class="dropdown-menu">
+                                  <li><button class="dropdown-item" type="button">All</button></li>
+                                  <li><button class="dropdown-item" type="button">Very important</button></li>
+                                  <li><button class="dropdown-item" type="button">Important</button></li>
+                                  <li><button class="dropdown-item" type="button">Not very important</button></li>
+                                </ul>
+                            </div>  
+                        </div>
                     </div>
-                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabindex="0">
-
+                    <div class="tab-pane fade" id="v-pills-month" role="tabpanel" aria-labelledby="v-pills-month-tab" tabindex="0">
+                        <div class="content-header d-flex justify-content-between align-items-end">
+                            <h5 class="fw-normal m-0">Month — <span id="month">month_date_expression</span></h5>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dropdown
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><button class="dropdown-item" type="button">All</button></li>
+                                    <li><button class="dropdown-item" type="button">Very important</button></li>
+                                    <li><button class="dropdown-item" type="button">Important</button></li>
+                                    <li><button class="dropdown-item" type="button">Not very important</button></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
             <!-- FOOTER -->
-            <footer class="footer">
-
+            <footer class="footer shadow-sm d-flex align-items-center justify-content-center flex-column h-auto py-4">
+                <p>The Odin Project — Rusty Gunao</p>
+                <a href="" class="repo btn px-4 rounded-5 text-decoration-none">Rusty-08 <i class="fa-brands fa-github"></i></a>
+                <div class="accounts mt-3 d-flex align-items-center gap-2">
+                    <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href=""><i class="fa-brands fa-github"></i></a>
+                    <div class="year d-flex align-items-center justify-content-center gap-1">
+                        <p id="year" class="m-0"></p>
+                        <i class="fa-regular fa-copyright"></i>
+                    </div>
+                </div>
             </footer>
         </section>
     </main>
