@@ -1,5 +1,8 @@
+
+
+
 //TODO Lists of nav links : Home, Today, This week and This month
-//TODO view all projects in home page
+//TODO view/add projects in home page
 //TODO View all todos in project when clicked
 //TODO Display title, due date and color priority type in each todo
 //TODO Add edit todo functionality
@@ -10,18 +13,13 @@
 
 
 
-
-
-
-
-
-
+import loadHomePage from './components/home'
 
 // * ONLOAD
 
 window.addEventListener('DOMContentLoaded', () => {
 
-
+    loadHomePage()
     // Display year in footer
 
     document.getElementById('year')
