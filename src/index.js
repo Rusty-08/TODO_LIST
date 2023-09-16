@@ -1,5 +1,5 @@
-
-
+import Home from './components/home'
+import Project from './components/project'
 
 //TODO Lists of nav links : Home, Today, This week and This month
 //TODO view/add projects in home page
@@ -11,18 +11,17 @@
 //TODO Add sorting by date and priority in home, today, this month and this month page
 
 
+// * ADD PROJECT WHEN ADD BUTTIN IN MODAL IS CLICKED
 
-import Home from './components/home'
-import Project from './components/project'
+const addBtn = document.getElementById('addProject')
+
+addBtn.addEventListener('click', Project.add)
 
 // * ONLOAD
 
 document.addEventListener('DOMContentLoaded', () => {
 
     Home.load()
-
-    const addBtn = document.getElementById('addProject')
-    addBtn.addEventListener('click', Project.add)
 
     document.getElementById('year')
         .textContent = new Date().getFullYear()

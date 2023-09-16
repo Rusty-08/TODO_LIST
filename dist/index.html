@@ -46,8 +46,8 @@
 
                     <!-- HOME PAGE -->
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
-                        <div class="content-header d-flex justify-content-between align-items-end">
-                            <h5 class="fw-normal m-0">Projects</h5>
+                        <div class="content-header d-flex justify-content-between align-items-center">
+                            <h5 class="fw-medium m-0">Projects</h5>
                             <!-- BUTTON TO TRIGGER MODAL -->
                             <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 <i class="fa-solid fa-plus"></i>
@@ -61,8 +61,8 @@
 
                     <!-- TODAY PAGE -->
                     <div class="tab-pane fade" id="v-pills-today" role="tabpanel" aria-labelledby="v-pills-today-tab" tabindex="0">
-                        <div class="content-header d-flex justify-content-between align-items-end">
-                            <h5 class="fw-normal m-0">Today — <span id="day">day_date_expression</span></h5>
+                        <div class="content-header d-flex justify-content-between align-items-center">
+                            <h5 class="fw-medium m-0">Today — <span id="day">day_date_expression</span></h5>
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Dropdown
@@ -79,8 +79,8 @@
 
                     <!-- WEEK PAGE -->
                     <div class="tab-pane fade" id="v-pills-week" role="tabpanel" aria-labelledby="v-pills-week-tab" tabindex="0">
-                        <div class="content-header d-flex justify-content-between align-items-end">
-                            <h5 class="fw-normal m-0">Week — <span id="week">week_date_expression</span></h5>
+                        <div class="content-header d-flex justify-content-between align-items-center">
+                            <h5 class="fw-medium m-0">Week — <span id="week">week_date_expression</span></h5>
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Dropdown
@@ -97,8 +97,8 @@
 
                     <!-- MONTH -->
                     <div class="tab-pane fade" id="v-pills-month" role="tabpanel" aria-labelledby="v-pills-month-tab" tabindex="0">
-                        <div class="content-header d-flex justify-content-between align-items-end">
-                            <h5 class="fw-normal m-0">Month — <span id="month">month_date_expression</span></h5>
+                        <div class="content-header d-flex justify-content-between align-items-center">
+                            <h5 class="fw-medium m-0">Month — <span id="month">month_date_expression</span></h5>
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Dropdown
@@ -133,7 +133,7 @@
             <div class="modal fade" id="exampleModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
-                        <div class="modal-header px-4">
+                        <div class="modal-header px-4 mx-1">
                             <h1 class="modal-title fs-5" id="exampleModalLabel">Project details</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
@@ -178,9 +178,9 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="addProject">Add</button>
+                        <div class="modal-footer mb-2 mx-3">
+                            <button type="button" class="btn px-4" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn px-4" data-bs-dismiss="modal" id="addProject">Add project</button>
                         </div>
                     </div>
                 </div>
