@@ -12,15 +12,17 @@
 
 
 
-
-import loadHomePage from './components/home'
+import Home from './components/home'
+import Project from './components/project'
 
 // * ONLOAD
 
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
-    loadHomePage()
-    // Display year in footer
+    Home.load()
+
+    const addBtn = document.getElementById('addProject')
+    addBtn.addEventListener('click', Project.add)
 
     document.getElementById('year')
         .textContent = new Date().getFullYear()

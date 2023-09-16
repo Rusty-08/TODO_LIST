@@ -186,10 +186,20 @@
 }
 
 .home-content .project {
-    border-color: var(--border-color);
+    border-color: transparent;
+    background-color: rgba(6, 42, 56, 0.1);
     padding: 1rem;
     margin-bottom: 1rem;
     transition: var(--transition-175ms);
+}
+
+.project:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+    box-shadow: 
+    rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.15) 0px 50px 100px -20px, 
+    rgba(0, 0, 0, 0.1) 0px 30px 60px -30px !important;
 }
 
 .project p {
@@ -197,19 +207,10 @@
 }
 
 .priority-icon {
-    padding: 1rem 1.1rem;
-    font-size: 1rem;
+    padding: .9rem 1rem;
+    font-size: 1.2rem;
     border-radius: 50%;
-    background-color: rgb(23, 107, 135, 0.1);
-}
-
-.project:hover {
-    cursor: pointer;
-    transition: var(--transition-175ms);
-}
-
-.project:hover .project-desc {
-    display: block;
+    background-color: #fff;
 }
 
 .project-desc {
