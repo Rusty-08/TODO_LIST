@@ -10,12 +10,14 @@ import Project from './components/project'
 //TODO Filter todos to display in today, this week and this month
 //TODO Add sorting by date and priority in home, today, this month and this month page
 
+const addProjectBtn = document.getElementById('addProjectBtn')
+const modalBtn = document.getElementById('projectModalButton')
 
-// * ADD PROJECT WHEN ADD BUTTIN IN MODAL IS CLICKED
-
-const addBtn = document.getElementById('addProject')
-
-addBtn.addEventListener('click', Project.add)
+addProjectBtn.addEventListener('click', () => {
+    Project.resetForm()
+    modalBtn.textContent = 'Add project'
+    Project.displayDetails()
+})
 
 // * ONLOAD
 

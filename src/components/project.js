@@ -1,5 +1,6 @@
 
 export default class Project {
+
     static projects = []
 
     constructor(title, desc, date, priority) {
@@ -8,6 +9,8 @@ export default class Project {
         this.date = date
         this.priority = priority
     }
+
+    // * ADD PROJECT INPUT GETTER
 
     static input() {
         const title = document.getElementById('title').value || 'No title'
@@ -24,6 +27,7 @@ export default class Project {
         Project.projects.push(newProject)
         Project.setData()
         Project.render()
+        console.log(newProject)
     }
 
     static render() {
@@ -52,7 +56,58 @@ export default class Project {
         Project.setData()
         Project.render()
     }
+
+    static editProject(index) {
+        const title = document.getElementById('title')
+        const desc = document.getElementById('desc')
+        const date = document.getElementById('date')
+        const radio = document.querySelector('input[name="priority"]:checked')
+        const priorityColor = radio ? radio.value : 'green'
+
+        Project.projects[index].title = title.value
+        Project.projects[index].desc = desc.value
+        Project.projects[index].date = date.value
+        Project.projects[index].priority = priorityColor
+
+        Project.setData()
+        Project.render()
+    }
+
+    static displayDetails(index, isEditMode = false) {
+        const modalBtn = document.getElementById('projectModalButton')
+        const title = document.getElementById('title')
+        const desc = document.getElementById('desc')
+        const date = document.getElementById('date')
+        const radios = document.querySelectorAll('input[name="priority"]')
+
+        if (isEditMode) {
+            title.value = Project.projects[index].title
+            desc.value = Project.projects[index].desc
+            date.value = Project.projects[index].date
+            let priorityValue = Project.projects[index].priority
+
+            radios.forEach(radio => {
+                radio.checked = radio.value === priorityValue
+            })
+
+            modalBtn.textContent = 'Save changes'
+            modalBtn.removeEventListener('click', Project.add)
+            modalBtn.addEventListener('click', () => Project.editProject(index))
+
+        } else {
+
+            modalBtn.removeEventListener('click', () => Project.editProject(index))
+            modalBtn.addEventListener('click', Project.add)
+        }
+    }
+
+    static resetForm() {
+        const form = document.getElementById('addProjectForm')
+        form.reset()
+    }
 }
+
+// * PROJECT CARD CREATION
 
 const createProjectCard = (project) => {
     const card = document.createElement('div')
@@ -83,7 +138,9 @@ const createProjectCard = (project) => {
     buttons.className = 'd-flex justify-content-end gap-2 mt-2'
 
     const edit = document.createElement('a')
-    edit.className = 'btn btn-outline-primary btn-sm opacity-75 text-decoration-none'
+    edit.setAttribute('data-bs-toggle', 'modal')
+    edit.setAttribute('data-bs-target', '#projectModal')
+    edit.className = 'edit-project btn btn-outline-primary btn-sm opacity-75 text-decoration-none'
     edit.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>'
 
     const del = document.createElement('a')
@@ -94,6 +151,12 @@ const createProjectCard = (project) => {
 
     del.addEventListener('click', () => {
         Project.remove(Project.projects.indexOf(project))
+    })
+
+    // * EDIT BUTTON
+
+    edit.addEventListener('click', () => {
+        Project.displayDetails(Project.projects.indexOf(project), true)
     })
 
     buttons.appendChild(edit)
